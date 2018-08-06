@@ -14,6 +14,7 @@ Vue.config.productionTip = false;
 Vue.use(Vuetify);
 Vue.use(Vuelidate);
 
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
