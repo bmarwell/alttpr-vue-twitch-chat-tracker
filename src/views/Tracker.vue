@@ -10,14 +10,15 @@
         ></tracker-item>
       </v-layout>
 
-      <!-- Dungeons -->
+      <!-- Bosses -->
       <v-layout align-start justify-start row wrap>
-        <tracker-item
-          v-for="dungeon in dungeons"
-          v-bind:key="dungeon.id"
-          v-bind:title="dungeon.title"
-          v-bind:images="dungeon.images"
-        ></tracker-item>
+        <tracker-boss
+          v-for="boss in bosses"
+          v-bind:key="boss.id"
+          v-bind:title="boss.title"
+          v-bind:image="boss.image"
+          v-bind:hasMedallion="boss.hasMedallion"
+        ></tracker-boss>
       </v-layout>
     </v-container>
   </div>
@@ -26,6 +27,7 @@
 
 <script>
 import TrackerItem from '@/components/TrackerItem.vue';
+import TrackerBoss from '@/components/TrackerBoss.vue';
 
 import _ from 'lodash';
 
@@ -33,6 +35,7 @@ export default {
   name: 'Tracker',
   components: {
     TrackerItem,
+    TrackerBoss,
   },
   methods: {
     isActive: function() {
@@ -111,8 +114,9 @@ export default {
         ]},
         {id: 'aga1', title: 'Agahnim', images: ['/static/items/aga1.png']},
       ],
-      dungeons: [
-
+      bosses: [
+        {id: 'knights', title: 'Amos Knights', image: '/static/bosses/knights.png'},
+        {id: 'vitreous', title: 'vitreous', image: '/static/bosses/vitreous.png', hasMedallion: true},
       ],
     };
   },
