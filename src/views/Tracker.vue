@@ -6,7 +6,17 @@
           v-for="item in items"
           v-bind:key="item.id"
           v-bind:title="item.title"
-          v-bind:image="item.images[0]"
+          v-bind:images="item.images"
+        ></tracker-item>
+      </v-layout>
+
+      <!-- Dungeons -->
+      <v-layout align-start justify-start row wrap>
+        <tracker-item
+          v-for="dungeon in dungeons"
+          v-bind:key="dungeon.id"
+          v-bind:title="dungeon.title"
+          v-bind:images="dungeon.images"
         ></tracker-item>
       </v-layout>
     </v-container>
@@ -82,7 +92,7 @@ export default {
           ]},
         {id: 'flippers', title: 'flippers', images: ['/static/items/flippers.png']},
 
-        {id: 'magic', title: 'magic', images: ['/static/items/magic.png']},
+        // {id: 'magic', title: 'magic', images: ['/static/items/magic.png']},
         {id: 'sword', title: 'sword', images: [
           '/static/items/sword1.png',
           '/static/items/sword2.png',
@@ -99,6 +109,9 @@ export default {
           '/static/items/mail1.png',
           '/static/items/mail2.png',
         ]},
+        {id: 'aga1', title: 'Agahnim', images: ['/static/items/aga1.png']},
+      ],
+      dungeons: [
 
       ],
     };
@@ -115,8 +128,5 @@ export default {
 
 
 <style>
-.item-deactivated {
-    opacity: 0.4;
-    filter: alpha(opacity=40); /* msie */
-}
+
 </style>
