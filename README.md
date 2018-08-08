@@ -2,6 +2,14 @@
 
 > A Link to the Past randomizer tracker which reacts on twitch chat.
 
+
+## Progress
+
+The standard layout is done.
+
+Still no twitch integration, which is following next.
+
+
 ## Preview
 
 ### Resizeable
