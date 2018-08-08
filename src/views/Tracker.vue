@@ -116,7 +116,18 @@ export default {
       ],
       bosses: [
         {id: 'knights', title: 'Amos Knights', image: '/static/bosses/knights.png'},
+        {id: 'lanmolas', title: 'lanmolas', image: '/static/bosses/lanmolas.png'},
+        {id: 'moldorm', title: 'moldorm', image: '/static/bosses/moldorm.png'},
+
+        /* dark world */
+        {id: 'helmasaur', title: 'helmasaur', image: '/static/bosses/helmasaur.png', hasMedallion: false},
+        {id: 'arrghus', title: 'arrghus', image: '/static/bosses/arrghus.png', hasMedallion: false},
+        {id: 'mothula', title: 'mothula', image: '/static/bosses/mothula.png', hasMedallion: false},
+
+        {id: 'blind', title: 'blind', image: '/static/bosses/blind.png', hasMedallion: false},
+        {id: 'kholdstare', title: 'kholdstare', image: '/static/bosses/kholdstare.png', hasMedallion: false},
         {id: 'vitreous', title: 'vitreous', image: '/static/bosses/vitreous.png', hasMedallion: true},
+        {id: 'trinexx', title: 'Trinexx', image: '/static/bosses/trinexx.png', hasMedallion: true},
       ],
     };
   },

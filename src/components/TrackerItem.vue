@@ -64,9 +64,9 @@ export default {
 .item {
   min-width: 64px;
   min-height: 64px;
-  border-color: red;
+/*  border-color: red;
   border-width: 1px;
-  border-style: solid;
+  border-style: solid; */
 }
 
 .item-deactivated {

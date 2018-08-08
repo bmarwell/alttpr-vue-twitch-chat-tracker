@@ -100,9 +100,9 @@ export default {
 .boss {
   min-width: 64px;
   min-height: 64px;
-  border-color: red;
+/*  border-color: red;
   border-width: 1px;
-  border-style: solid;
+  border-style: solid; */
 }
 
 .boss-deactivated {
@@ -124,8 +124,8 @@ img.medallion {
   height: 32px;
   background-color:transparent;
   position:absolute;
-  bottom:0px;
-  right:0px;
+  bottom: 0px;
+  right: 0px;
   display: flex;
 }
 
