@@ -60,7 +60,7 @@ export default {
         {id: 'firerod', title: 'firerod', images: ['/static/items/firerod.png']},
         {id: 'icerod', title: 'icerod', images: ['/static/items/icerod.png']},
 
-        {id: 'bombos', title: 'bombos', images: ['/static/items/bombos.png']},
+        {id: 'bombos', title: 'bombos', images: ['/static/items/bombos.svg']},
         {id: 'ether', title: 'ether', images: ['/static/items/ether.png']},
         {id: 'quake', title: 'quake', images: ['/static/items/quake.png']},
 
