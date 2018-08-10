@@ -21,6 +21,8 @@
         ></tracker-boss>
       </v-layout>
     </v-container>
+
+    <twitch-listener />
   </div>
 </template>
 
@@ -28,6 +30,7 @@
 <script>
 import TrackerItem from '@/components/TrackerItem.vue';
 import TrackerBoss from '@/components/TrackerBoss.vue';
+import TwitchListener from '@/components/TwitchListener.vue';
 
 import _ from 'lodash';
 
@@ -36,12 +39,22 @@ export default {
   components: {
     TrackerItem,
     TrackerBoss,
+    TwitchListener,
   },
   methods: {
     isActive: function() {
       return false;
     },
   },
+  mounted: function() {
+    console.log(TwitchListener.methods);
+    // TrackerItem.methods.startClient();
+
+    setInterval(function() {
+
+    }, 30000);
+  },
+
   props: ['tracker'],
   data() {
     return {
