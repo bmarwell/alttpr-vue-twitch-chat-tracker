@@ -27,12 +27,15 @@ If another user should be the tracker guy of your trust, enter the new name and 
 
 ### NEXT
 
-* emit events on valid commands, so the tracker can react.
-* react to chat commands (top priority obviously).
-* Update button for another user which will be tracker.
-* Reconnect should work better.
+* react to chat commands (top priority obviously). See [#2](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/issues/2).
+* Update button for another user which will be tracker. See [#3](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/issues/3).
 * Save username, channel, oauth.
 * Save item state.
+
+### 2108-08-13
+* Reconnect works a little better already.
+* emit events on valid commands, so the tracker can react. Was [#1](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/issues/2).
+Already can react to !hud \[bow, boomerang blue, boomerang red, arrows, silvers, laggerang, rederang, boomerang both\].
 
 ### 2018-08-10
 Twitch integration: You can connect and send !hud commands without anything to happen.
