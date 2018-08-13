@@ -14,7 +14,16 @@
 <script>
 export default {
   name: 'TrackerItem',
-  props: ['images', 'title'],
+  props: {
+    'images': Array,
+    'title': String,
+    'update': {
+      type: Function,
+      // Object or array defaults must be returned from
+      // a factory function
+      default: function() { },
+    },
+   },
 
   computed: {
     currentImage: function() {
@@ -35,6 +44,26 @@ export default {
     };
   },
   methods: {
+    setState: function(state) {
+      if (!Number.isInteger(state)) {
+        return;
+      }
+
+      if (state >= this.images.length) {
+        this.nextState();
+        return;
+      }
+
+      if (state === 0) {
+        this.state = 'deactivated';
+        this.index = 0;
+
+        return;
+      }
+
+      this.state = '';
+      this.index = state -1;
+    },
     nextState: function() {
       // on deactivated, image should stay at index 0 and just activate itself.
       if (this.state === 'deactivated') {
@@ -56,6 +85,11 @@ export default {
       // more images? next one.
       this.index++;
     },
+  },
+  created: function() {
+    return [
+      this.$eventHub.$on('hud-update', (params) => this.update(this, params)),
+    ];
   },
 };
 </script>

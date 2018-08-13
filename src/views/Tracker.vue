@@ -7,6 +7,7 @@
           v-bind:key="item.id"
           v-bind:title="item.title"
           v-bind:images="item.images"
+          v-bind:update="item.update"
         ></tracker-item>
       </v-layout>
 
@@ -31,6 +32,7 @@
 import TrackerItem from '@/components/TrackerItem.vue';
 import TrackerBoss from '@/components/TrackerBoss.vue';
 import TwitchListener from '@/components/TwitchListener.vue';
+import ItemUpdate from '@/js/ItemUpdates.js';
 
 import _ from 'lodash';
 
@@ -44,6 +46,11 @@ export default {
   methods: {
     isActive: function() {
       return false;
+    },
+    onBow: function(params) {
+      console.log('** Received event');
+      console.log(params);
+      console.log('** END: Received event');
     },
   },
   mounted: function() {
@@ -59,9 +66,9 @@ export default {
   data() {
     return {
       items: [
-        {id: 'bow', title: 'bow', images: ['/static/items/bow0.png']},
-        {id: 'silvers', title: 'silver arrows', images: ['/static/items/silvers.png']},
-        {id: 'boomerangs', title: 'Boomerangs', images: [
+        {id: 'bow', title: 'bow', images: ['/static/items/bow0.png'], update: ItemUpdate.bow},
+        {id: 'silvers', title: 'silver arrows', update: ItemUpdate.arrows, images: ['/static/items/silvers.png']},
+        {id: 'boomerangs', title: 'Boomerangs', update: ItemUpdate.boomerang, images: [
           '/static/items/boomerang0.png',
           '/static/items/boomerang1.png',
           '/static/items/boomerang2.png',

@@ -11,6 +11,7 @@ import 'material-design-icons/iconfont/material-icons.css';
 import 'vuetify/dist/vuetify.css';
 
 Vue.config.productionTip = false;
+Vue.prototype.$eventHub = new Vue();
 Vue.use(Vuetify);
 Vue.use(Vuelidate);
 

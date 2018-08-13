@@ -46,29 +46,6 @@ const tmi = require('tmi.js');
 let commandPrefix = '!';
 
 /**
- * Called every time a message comes in:
- * @param {object} target the channel name with a leading hash.
- * @param {TwitchMessageContext} context context of the message.
- * @param {object} params
- */
-function hud(target, context, params) {
-  console.log(target);
-  console.log(context);
-  console.log(params);
-
-  // If there's something to echo:
-  if (params.length) {
-    // TODO: interpret commands.
-    // TODO: emit events.
-  } else { // Nothing to echo
-    console.log(`* Nothing to echo`);
-  }
-}
-
-// These are the commands the bot knows (defined below):
-let knownCommands = {hud};
-
-/**
  *  Called every time the bot connects to Twitch chat:
  * @param {string} addr  the server address we connected to.
  * @param {number} port int the port connected to.
@@ -93,20 +70,31 @@ export default {
   mounted: function() {
     // startClient();
   },
+  beforeDestroy: function() {
+    if (this.client !== null && this.client !== undefined) {
+      this.client.disconnect();
+    }
+  },
   methods: {
     startClient() {
-       console.log( 'starting client' );
+      if (this.client !== null) {
+        this.client.disconnect();
+        // unregister listeners.
+        this.client.on('message', function() {});
+        this.client.on('connected', function() {});
+        this.client.on('disconnected', function() {});
+      }
+
       // Create a client with our options:
-      console.log(this.opts);
-      let client = new tmi.client(this.opts); // eslint-disable-line new-cap
+      this.client = tmi.client(this.opts); // eslint-disable-line new-cap
 
       // Register our event handlers (defined below):
-      client.on('message', this.onMessageHandler);
-      client.on('connected', onConnectedHandler);
-      client.on('disconnected', onDisconnectedHandler);
+      this.client.on('message', this.onMessageHandler);
+      this.client.on('connected', onConnectedHandler);
+      this.client.on('disconnected', onDisconnectedHandler);
 
       // Connect to Twitch:
-      client.connect();
+      this.client.connect();
     },
     onMessageHandler(target, context, msg, self) {
       if (self) {
@@ -118,12 +106,9 @@ export default {
       }
 
       // This isn't a command since it has no prefix:
-      {if (msg.substr(0, 1) !== commandPrefix) {
-        console.log(
-          `[${target} (${context['message-type']})] ${context.username}: ${msg}`
-        );
+      if (msg.substr(0, 1) !== commandPrefix) {
         return;
-      }}
+      }
 
       // Split the message into individual words:
       const parse = msg.slice(1).split(' ');
@@ -133,15 +118,24 @@ export default {
       const params = parse.splice(1);
 
       // If the command is known, let's execute it:
-      if (commandName in knownCommands) {
+      if (commandName in this.knownCommands) {
         // Retrieve the function by its name:
-        const command = knownCommands[commandName];
+        const command = this.knownCommands[commandName];
         // Then call the command with parameters:
         command(target, context, params);
         console.log(`* Executed ${commandName} command for ${context.username}`);
       } else {
         console.log(`* Unknown command ${commandName} from ${context.username}`);
       }
+    },
+    hud: function(target, context, params) {
+      // If there's something to echo:
+      if (!params.length) {
+        // send help message to emitter.
+        return;
+      }
+
+      this.$eventHub.$emit('hud-update', params);
     },
   },
   data() {
@@ -154,6 +148,9 @@ export default {
       username: '',
       password: '',
       listenuser: '',
+      client: null,
+      // These are the commands the bot knows (defined below):
+      knownCommands: {hud: this.hud},
     };
   },
   computed: {
@@ -166,6 +163,10 @@ export default {
         channels: [
           this.channel,
         ],
+        connection: {
+          reconnect: true,
+          maxReconnectAttempts: 13,
+        },
       };
     },
   },
