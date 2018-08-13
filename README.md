@@ -2,13 +2,48 @@
 
 > A Link to the Past randomizer tracker which reacts on twitch chat.
 
+## Setup
+
+There are four input fields at the botton.
+
+* channel
+  The channel to listen to. If you're streaming on your channel, enter your username.
+* listen user
+  The user to listen to. Enter the username for the bot to react to.
+* twitch user
+  login for Twitch IRC. If you don't have a bot, use your username.
+* twitch password (oauth)
+  Generate a password-like token here: https://twitchapps.com/tmi/
+
+Click connect.
+
+### change tracker user (not implemented)
+
+If another user should be the tracker guy of your trust, enter the new name and click update (button next to it).
+
+---
 
 ## Progress
 
-The standard layout is done.
+### NEXT
 
+* emit events on valid commands, so the tracker can react.
+* react to chat commands (top priority obviously).
+* Update button for another user which will be tracker.
+* Reconnect should work better.
+* Save username, channel, oauth.
+* Save item state.
+
+### 2018-08-10
+Twitch integration: You can connect and send !hud commands without anything to happen.
+
+### 2018-08-08
 Still no twitch integration, which is following next.
 
+### 2018-08-07
+The standard layout is done.
+
+---
 
 ## Preview
 
@@ -28,7 +63,7 @@ Just look at this!
 
 Hint: Take a closer look at bombos and the crystals!
 
-
+---
 
 ## Build Setup
 
