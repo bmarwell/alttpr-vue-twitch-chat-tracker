@@ -4,6 +4,7 @@
   "description": "A Link to the Past randomizer tracker which reacts on twitch chat.",
   "author": "Benjamin Marwell <bmarwell@gmail.com>",
   "private": true,
+  "main": "src/electron.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
