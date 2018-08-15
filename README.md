@@ -70,24 +70,27 @@ Hint: Take a closer look at bombos and the crystals!
 
 ## Build Setup
 
-``` bash
-# install dependencies
-npm install
+Note: to get started, always do `yarn install` first!
 
-# serve with hot reload at localhost:8080
-npm run dev
+``` bash
+# install dependencies to get started
+yarn install
+
+# start the main application with live reload and chrome debugging tools
+yarn run dev
 
 # build for production with minification
-npm run build
+yarn run build
+yarn run build:linux
 
 # build for production and view the bundle analyzer report
-npm run build --report
+yarn run build --report
 
 # run unit tests
-npm run unit
+yarn run unit
 
 # run all tests
-npm test
+yarn test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
