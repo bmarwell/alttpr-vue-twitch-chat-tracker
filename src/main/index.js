@@ -1,37 +1,29 @@
-'use strict';
-
-import {app, BrowserWindow, ipcMain} from 'electron';
+import {app, BrowserWindow} from 'electron';
 
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
  */
 if (process.env.NODE_ENV !== 'development') {
-  global.__static = require('path')
-    .join(__dirname, '/static')
-    .replace(/\\/g, '\\\\');
+  global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\');
 }
 
 let mainWindow;
-const winURL = process.env.NODE_ENV === 'development' ? 'http://localhost:9080' : `file://${__dirname}/index.html`;
+const winURL = process.env.NODE_ENV === 'development'
+  ? `http://localhost:9080`
+  : `file://${__dirname}/index.html`;
 
 /**
- * creates the main window.
+ * Start main window of electron.
  */
 function createWindow() {
   /**
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    minWidth: 400,
-    minHeight: 300,
-    resizable: true,
-    webPreferences: {
-      textAreasAreResizable: false,
-    },
+    height: 563,
     useContentSize: true,
+    width: 1000,
   });
 
   mainWindow.loadURL(winURL);
@@ -44,7 +36,9 @@ function createWindow() {
 app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
-  app.quit();
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });
 
 app.on('activate', () => {
@@ -53,23 +47,22 @@ app.on('activate', () => {
   }
 });
 
-ipcMain.on('ask-key', (askKeyEvent) => {
-  let askKeyPrompt = new BrowserWindow({
-    width: 350,
-    height: 100,
-    parent: mainWindow,
-    modal: true,
-    frame: false,
-    resizable: false,
-  });
-  askKeyPrompt.loadURL(
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:9080/#/ask-encrypt-key'
-      : `file://${__dirname}/index.html#ask-encrypt-key`,
-  );
-  ipcMain.once('set-key', (setKeyEvent, setKeyArgu) => {
-    askKeyPrompt.close();
-    askKeyPrompt = null;
-    askKeyEvent.sender.send('reply-ask-key', setKeyArgu);
-  });
-});
+/**
+ * Auto Updater
+ *
+ * Uncomment the following code below and install `electron-updater` to
+ * support auto updating. Code Signing with a valid certificate is required.
+ * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
+ */
+
+/*
+import { autoUpdater } from 'electron-updater'
+
+autoUpdater.on('update-downloaded', () => {
+  autoUpdater.quitAndInstall()
+})
+
+app.on('ready', () => {
+  if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
+})
+ */

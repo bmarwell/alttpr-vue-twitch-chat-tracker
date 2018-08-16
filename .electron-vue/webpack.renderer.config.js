@@ -10,9 +10,6 @@ const BabiliWebpackPlugin = require('babili-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
-
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 /**
  * List of node_modules to include in webpack bundle
@@ -21,7 +18,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
  * that provide pure *.vue files that need compiling
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/webpack-configurations.html#white-listing-externals
  */
-let whiteListedModules = ['vue']
+let whiteListedModules = ['vue', 'vuetify']
 
 let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
@@ -39,6 +36,9 @@ let rendererConfig = {
         exclude: /node_modules/,
         use: {
           loader: 'eslint-loader',
+          options: {
+            formatter: require('eslint-friendly-formatter')
+          }
         }
       },
       {
@@ -54,7 +54,7 @@ let rendererConfig = {
       },
       {
         test: /\.js$/,
-        use: 'babel-loader?cacheDirectory',
+        use: 'babel-loader',
         exclude: /node_modules/
       },
       {
@@ -122,7 +122,6 @@ let rendererConfig = {
         ? path.resolve(__dirname, '../node_modules')
         : false
     }),
-    new LodashModuleReplacementPlugin,
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
@@ -159,11 +158,6 @@ if (process.env.NODE_ENV === 'production') {
   rendererConfig.devtool = ''
 
   rendererConfig.plugins.push(
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      reportFilename: path.resolve(__dirname, '../.report/bundle-analyzer.html'),
-      openAnalyzer: false,
-    }),
     new BabiliWebpackPlugin(),
     new CopyWebpackPlugin([
       {

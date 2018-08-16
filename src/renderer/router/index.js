@@ -8,7 +8,11 @@ export default new Router({
     {
       path: '/',
       name: 'Tracker',
-      component: () => import('@/views/Tracker'),
+      component: require('@/views/Tracker').default,
+    },
+    {
+      path: '*',
+      redirect: '/',
     },
   ],
 });

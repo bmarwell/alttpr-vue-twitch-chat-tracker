@@ -1,5 +1,6 @@
 # alttpr-vue-twitch-chat-tracker
 
+
 > A Link to the Past randomizer tracker which reacts on twitch chat.
 
 ## Setup
@@ -68,29 +69,34 @@ Hint: Take a closer look at bombos and the crystals!
 
 ---
 
-## Build Setup
-
-Note: to get started, always do `yarn install` first!
+#### Build Setup
 
 ``` bash
 # install dependencies to get started
 yarn install
 
-# start the main application with live reload and chrome debugging tools
+# serve with hot reload at localhost:9080
 yarn run dev
 
-# build for production with minification
+# build electron application for production
 yarn run build
 yarn run build:linux
 
 # build for production and view the bundle analyzer report
 yarn run build --report
 
-# run unit tests
-yarn run unit
-
-# run all tests
+# run unit & end-to-end tests
 yarn test
+
+
+# lint all JS/Vue component files in `src/`
+npm run lint
+
 ```
 
+---
+
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).

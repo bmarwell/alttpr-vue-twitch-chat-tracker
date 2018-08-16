@@ -3,6 +3,7 @@
 const chalk = require('chalk')
 const electron = require('electron')
 const path = require('path')
+const { say } = require('cfonts')
 const { spawn } = require('child_process')
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
@@ -42,9 +43,9 @@ function startRenderer () {
     rendererConfig.entry.renderer = [path.join(__dirname, 'dev-client')].concat(rendererConfig.entry.renderer)
 
     const compiler = webpack(rendererConfig)
-    hotMiddleware = webpackHotMiddleware(compiler, {
-      log: false,
-      heartbeat: 2500
+    hotMiddleware = webpackHotMiddleware(compiler, { 
+      log: false, 
+      heartbeat: 2500 
     })
 
     compiler.plugin('compilation', compilation => {
@@ -113,7 +114,7 @@ function startMain () {
 }
 
 function startElectron () {
-  electronProcess = spawn(electron, ['--inspect=5858', path.join(__dirname, '../dist/electron/main.js')])
+  electronProcess = spawn(electron, ['--inspect=5858', '.'])
 
   electronProcess.stdout.on('data', data => {
     electronLog(data, 'blue')
@@ -144,7 +145,27 @@ function electronLog (data, color) {
   }
 }
 
+function greeting () {
+  const cols = process.stdout.columns
+  let text = ''
+
+  if (cols > 104) text = 'electron-vue'
+  else if (cols > 76) text = 'electron-|vue'
+  else text = false
+
+  if (text) {
+    say(text, {
+      colors: ['yellow'],
+      font: 'simple3d',
+      space: false
+    })
+  } else console.log(chalk.yellow.bold('\n  electron-vue'))
+  console.log(chalk.blue('  getting ready...') + '\n')
+}
+
 function init () {
+  greeting()
+
   Promise.all([startRenderer(), startMain()])
     .then(() => {
       startElectron()

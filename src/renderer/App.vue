@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
-
 <script>
-export default {
-  name: 'App',
-};
+  export default {
+    name: 'alttpr-vue-twitch-chat-tracker',
+  };
 </script>
 
-
 <style>
-body {
+  /* CSS */
+  body {
   background-color: black;
 }
 

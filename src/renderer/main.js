@@ -7,8 +7,14 @@ import router from './router';
 import Vuelidate from 'vuelidate';
 import Vuetify from 'vuetify';
 
+import axios from 'axios';
+import store from './store';
+
 import 'material-design-icons/iconfont/material-icons.css';
 import 'vuetify/dist/vuetify.css';
+
+if (!process.env.IS_WEB) Vue.use(require('vue-electron'));
+Vue.http = Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false;
 Vue.prototype.$eventHub = new Vue();
@@ -21,5 +27,6 @@ new Vue({
   el: '#app',
   router,
   components: {App},
+  store,
   template: '<App/>',
-});
+}).$mount('#app');
