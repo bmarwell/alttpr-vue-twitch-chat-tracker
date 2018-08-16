@@ -34,7 +34,11 @@ If another user should be the tracker guy of your trust, enter the new name and 
 * Save username, channel, oauth.
 * Save item state.
 
-### 2108-08-13
+### 2018-08-16
+
+* added electron
+
+### 2018-08-13
 * Reconnect works a little better already.
 * emit events on valid commands, so the tracker can react. Was [#1](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/issues/2).
 Already can react to !hud \[bow, boomerang blue, boomerang red, arrows, silvers, laggerang, rederang, boomerang both\].
@@ -59,6 +63,12 @@ Standard tournament tracker layout \
 
 Typical streamer’s layout \
 ![Standard tracker layout](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/raw/master/assets/resizeable1.png)
+
+### electron app
+
+Will run under mac os, windows x64 and Linux x64!
+
+![Standard tracker layout](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/raw/master/assets/electron-oldconfig.png)
 
 ### SVG Graphics
 
