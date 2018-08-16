@@ -1,5 +1,6 @@
 # alttpr-vue-twitch-chat-tracker
 
+[![Build Status](https://travis-ci.org/bmhm/alttpr-vue-twitch-chat-tracker.svg?branch=master)](https://travis-ci.org/bmhm/alttpr-vue-twitch-chat-tracker)  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 > A Link to the Past randomizer tracker which reacts on twitch chat.
 
