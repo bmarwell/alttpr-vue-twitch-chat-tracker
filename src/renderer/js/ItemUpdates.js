@@ -82,6 +82,26 @@ class ItemUpdates {
       return;
     }
   }
+
+   /**
+   * update hookshot.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static hookshot(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    const secondParam = params[1];
+    // just 'hook…' or 'hookshot'.
+    if (['hook'].indexOf(firstParam) >= 0 && (secondParam == null || secondParam === undefined)) {
+      trackerItem.nextState();
+      return;
+    }
+  }
 }
 
 export default ItemUpdates;

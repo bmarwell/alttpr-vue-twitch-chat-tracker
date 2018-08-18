@@ -73,7 +73,7 @@ export default {
           './static/items/boomerang1.png',
           './static/items/boomerang2.png',
           ]},
-        {id: 'hookshot', title: 'Hookshot', images: ['./static/items/hookshot.png']},
+        {id: 'hookshot', title: 'Hookshot', images: ['./static/items/hookshot.png'], update: ItemUpdate.hookshot},
         {id: 'mushroom', title: 'mushroom', images: ['./static/items/mushroom.png']},
         {id: 'powder', title: 'powder', images: ['./static/items/powder.png']},
 
