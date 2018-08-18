@@ -81,7 +81,7 @@ export default {
         {id: 'icerod', title: 'icerod', images: ['./static/items/icerod.png']},
 
         {id: 'bombos', title: 'bombos', images: ['./static/items/bombos.svg']},
-        {id: 'ether', title: 'ether', images: ['./static/items/ether.png']},
+        {id: 'ether', title: 'ether', images: ['./static/items/ether.svg']},
         {id: 'quake', title: 'quake', images: ['./static/items/quake.png']},
 
         {id: 'lantern', title: 'lantern', images: ['./static/items/lantern.png']},

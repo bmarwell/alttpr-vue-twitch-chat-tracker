@@ -44,7 +44,7 @@ export default {
       medallions: [
         './static/bosses/medallion0.png',
         './static/items/bombos.svg',
-        './static/bosses/medallion2.png',
+        './static/bosses/ether.png',
         './static/bosses/medallion3.png',
       ],
     };
