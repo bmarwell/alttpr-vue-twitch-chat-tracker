@@ -38,7 +38,7 @@ script:
 #- yarn run pack && xvfb-maybe node_modules/.bin/mocha test/e2e
   - yarn run lint
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn run release:win:linux ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn run release ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn run release:mac ; fi
 branches:
   only:
   - master
