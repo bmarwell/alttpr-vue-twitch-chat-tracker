@@ -34,6 +34,11 @@ If another user should be the tracker guy of your trust, enter the new name and 
 * Save username, channel, oauth.
 * Save item state.
 
+### 2018-08-18
+
+* Created a preview release for win + linux.
+* Added the hookshot towards [#2](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/issues/2).
+
 ### 2018-08-16
 
 * added electron
