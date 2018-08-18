@@ -1,4 +1,7 @@
-import {app, BrowserWindow} from 'electron';
+import {app, BrowserWindow, Menu} from 'electron';
+
+import AppMenu from './menu';
+
 
 /**
  * Set `__static` path to static files in production
@@ -25,6 +28,9 @@ function createWindow() {
     useContentSize: true,
     width: 1000,
   });
+
+  const menu = Menu.buildFromTemplate(AppMenu.mainMenu());
+  Menu.setApplicationMenu(menu);
 
   mainWindow.loadURL(winURL);
 
