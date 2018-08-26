@@ -25,6 +25,18 @@ If another user should be the tracker guy of your trust, enter the new name and 
 
 ---
 
+## Roadmap
+
+## v0.2.0
+
+* move settings to menu.
+* set bg colour.
+* updateable user, multiple users even.
+
+## v0.1.0
+
+* All Items and bosses can be updated via twitch and click
+
 ## Progress
 
 ### NEXT
@@ -33,6 +45,12 @@ If another user should be the tracker guy of your trust, enter the new name and 
 * Update button for another user which will be tracker. See [#3](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/issues/3).
 * Save username, channel, oauth.
 * Save item state.
+
+### 2018-08-26
+
+* added a temporary quake svg.
+* reduced opacity for deactivated items.
+* added a few tracker items which are now updateable via twitch.
 
 ### 2018-08-18
 

@@ -44,8 +44,8 @@ export default {
       medallions: [
         './static/bosses/medallion0.png',
         './static/items/bombos.svg',
-        './static/bosses/ether.png',
-        './static/bosses/medallion3.png',
+        './static/bosses/ether.svg',
+        './static/bosses/quake.svg',
       ],
     };
   },
@@ -106,7 +106,7 @@ export default {
 }
 
 .boss-deactivated {
-    opacity: 0.4;
+    opacity: 0.3;
     filter: alpha(opacity=40); /* msie */
 }
 

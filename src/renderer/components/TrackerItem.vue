@@ -104,7 +104,7 @@ export default {
 }
 
 .item-deactivated {
-    opacity: 0.4;
+    opacity: 0.3;
     filter: alpha(opacity=40); /* msie */
 }
 </style>
