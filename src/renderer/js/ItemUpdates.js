@@ -241,9 +241,65 @@ class ItemUpdates {
 
     const firstParam = params[0];
     const secondParam = params[1];
-    // just 'fire rod' or 'firerod'.
+    // just 'quake' or 'med[allion] quake'.
     if (['quake'].indexOf(firstParam) >= 0
     || (['med'].indexOf(firstParam) >= 0 && ['quake'].indexOf(secondParam) >= 0)) {
+      trackerItem.nextState();
+      return;
+    }
+  }
+
+  /**
+   * update lantern.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static lantern(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    if (['lantern'].indexOf(firstParam) >= 0) {
+      trackerItem.nextState();
+      return;
+    }
+  }
+
+  /**
+   * update hammer.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static hammer(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    if (['hammer'].indexOf(firstParam) >= 0) {
+      trackerItem.nextState();
+      return;
+    }
+  }
+
+  /**
+   * update flute.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static flute(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    const secondParam = params[0];
+    if (['flute'].indexOf(firstParam) >= 0
+    || (['duck'].indexOf(firstParam) >= 0 && ['whistle'].indexOf(secondParam) >= 0)) {
       trackerItem.nextState();
       return;
     }

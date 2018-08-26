@@ -84,11 +84,11 @@ export default {
         {id: 'ether', title: 'ether', images: ['./static/items/ether.svg'], update: ItemUpdate.ether},
         {id: 'quake', title: 'quake', images: ['./static/items/quake.svg'], update: ItemUpdate.quake},
 
-        {id: 'lantern', title: 'lantern', images: ['./static/items/lantern.png']},
+        {id: 'lantern', title: 'lantern', images: ['./static/items/lantern.png'], update: ItemUpdate.lantern},
 
         /* next 12 */
-        {id: 'hammer', title: 'hammer', images: ['./static/items/hammer.png']},
-        {id: 'flute', title: 'flute', images: ['./static/items/flute.png']},
+        {id: 'hammer', title: 'hammer', images: ['./static/items/hammer.png'], update: ItemUpdate.hammer},
+        {id: 'flute', title: 'flute', images: ['./static/items/flute.png'], update: ItemUpdate.flute},
 
         {id: 'net', title: 'net', images: ['./static/items/net.png']},
         {id: 'book', title: 'book', images: ['./static/items/book.png']},
