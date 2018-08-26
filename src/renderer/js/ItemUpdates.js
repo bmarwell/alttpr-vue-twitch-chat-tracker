@@ -185,6 +185,69 @@ class ItemUpdates {
       return;
     }
   }
+
+  /**
+   * update bombos.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static bombos(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    const secondParam = params[1];
+    // just 'fire rod' or 'firerod'.
+    if (['bombos'].indexOf(firstParam) >= 0
+    || (['med'].indexOf(firstParam) >= 0 && ['bomb'].indexOf(secondParam) >= 0)) {
+      trackerItem.nextState();
+      return;
+    }
+  }
+
+  /**
+   * update ether.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static ether(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    const secondParam = params[1];
+    // just 'fire rod' or 'firerod'.
+    if (['ether'].indexOf(firstParam) >= 0
+    || (['med'].indexOf(firstParam) >= 0 && ['ether'].indexOf(secondParam) >= 0)) {
+      trackerItem.nextState();
+      return;
+    }
+  }
+
+  /**
+   * update quake.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static quake(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    const secondParam = params[1];
+    // just 'fire rod' or 'firerod'.
+    if (['quake'].indexOf(firstParam) >= 0
+    || (['med'].indexOf(firstParam) >= 0 && ['quake'].indexOf(secondParam) >= 0)) {
+      trackerItem.nextState();
+      return;
+    }
+  }
 }
 
 export default ItemUpdates;

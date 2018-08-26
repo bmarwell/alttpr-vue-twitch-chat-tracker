@@ -80,9 +80,9 @@ export default {
         {id: 'firerod', title: 'firerod', images: ['./static/items/firerod.png'], update: ItemUpdate.firerod},
         {id: 'icerod', title: 'icerod', images: ['./static/items/icerod.png'], update: ItemUpdate.icerod},
 
-        {id: 'bombos', title: 'bombos', images: ['./static/items/bombos.svg']},
-        {id: 'ether', title: 'ether', images: ['./static/items/ether.svg']},
-        {id: 'quake', title: 'quake', images: ['./static/items/quake.svg']},
+        {id: 'bombos', title: 'bombos', images: ['./static/items/bombos.svg'], update: ItemUpdate.bombos},
+        {id: 'ether', title: 'ether', images: ['./static/items/ether.svg'], update: ItemUpdate.ether},
+        {id: 'quake', title: 'quake', images: ['./static/items/quake.svg'], update: ItemUpdate.quake},
 
         {id: 'lantern', title: 'lantern', images: ['./static/items/lantern.png']},
 
