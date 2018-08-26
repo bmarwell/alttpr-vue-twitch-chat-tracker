@@ -42,10 +42,10 @@ export default {
       ],
       medallionIndex: 0,
       medallions: [
-        './static/bosses/medallion0.png',
+        './static/items/questionmark.svg',
         './static/items/bombos.svg',
-        './static/bosses/ether.svg',
-        './static/bosses/quake.svg',
+        './static/items/ether.svg',
+        './static/items/quake.svg',
       ],
     };
   },

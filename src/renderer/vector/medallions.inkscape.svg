@@ -28,9 +28,9 @@
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
      inkscape:cx="124.69351"
-     inkscape:cy="126.38211"
+     inkscape:cy="121.49944"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer7"
+     inkscape:current-layer="layer8"
      showgrid="false"
      units="px"
      inkscape:window-width="1848"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -152,12 +152,28 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="quake"
-     style="display:inline">
+     style="display:none">
     <path
        style="display:inline;fill:#f8d438;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 7.843006,21.053274 8.787946,11.811755 C 17.764881,16.801041 36.002233,14.344196 38.55357,34.376933 42.531118,11.212884 66.901785,16.99003 59.625743,47.417113 L 48.569941,35.22738 C 49.453487,53.491582 27.107508,53.735931 27.119792,35.321875 25.910602,55.52437 1.7953865,55.543602 7.843006,21.053274 Z"
        id="path827"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer8"
+     inkscape:label="questionmark"
+     style="display:inline">
+    <g
+       aria-label="?"
+       transform="matrix(0.26458333,0,0,0.26458333,-5.2916666,-7.4650297)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Opus Std';-inkscape-font-specification:'Opus Std';letter-spacing:0px;word-spacing:-21.55999947px;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="flowRoot852">
+      <path
+         d="m 147.32613,83.812738 c 12.032,0 20.48,17.920002 20.48,27.136002 0,9.472 -0.256,19.456 -10.496,28.928 -16.64,15.104 -19.712,30.208 -19.712,41.216 v 10.496 c 0,1.792 6.4,3.84 8.448,3.84 2.048,0 8.448,-2.048 8.448,-3.84 v -9.984 c 0,-18.944 7.936,-24.576 15.36,-30.208 12.032,-8.704 30.72,-21.248 30.72,-41.472 0,-13.056002 -5.632,-25.600002 -17.664,-32.512002 -9.216,-5.12 -22.016,-6.144 -33.28,-6.144 -18.688,0 -39.424,10.752 -45.568,15.872 l -0.768,1.024 4.096,19.456002 8.448,0.256 c 6.656,-11.520002 17.152,-24.064002 31.488,-24.064002 z m -20.992,143.872002 c 2.816,10.752 7.168,15.104 17.664,17.408 h 1.024 c 9.216,-2.304 14.08,-6.912 17.664,-17.408 v -1.28 c -3.328,-9.216 -8.192,-14.08 -17.664,-17.408 h -1.024 c -9.728,3.84 -14.336,8.96 -17.664,17.408 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:256px;line-height:100%;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O Bold';text-align:center;word-spacing:0px;text-anchor:middle;fill:#f9f9f9;stroke:#000000;stroke-opacity:1"
+         id="path1131" />
+    </g>
   </g>
 </svg>
