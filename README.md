@@ -95,11 +95,16 @@ Will run under mac os, windows x64 and Linux x64!
 
 ### SVG Graphics
 
-Just look at this!
+Just look at this! I updated some graphics to an HD format (HD medallions and HD crystals).
 
-![Bombos](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/raw/master/assets/svg-graphics.png)
+More will be added later.
 
-Hint: Take a closer look at bombos and the crystals!
+![HD SVG Medalltions and Crystals for Legend of Zelda tracker.](https://github.com/bmhm/alttpr-vue-twitch-chat-tracker/raw/master/assets/svg-graphics.png)
+
+Hint: Take a closer look at the medalltions and the crystals!
+
+Licence: Apache 2.0 -- feel free to reuse for attribution and share under the same license.
+Please read the license carefully before using.
 
 ---
 
