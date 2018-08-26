@@ -74,8 +74,8 @@ export default {
           './static/items/boomerang2.png',
           ]},
         {id: 'hookshot', title: 'Hookshot', images: ['./static/items/hookshot.png'], update: ItemUpdate.hookshot},
-        {id: 'mushroom', title: 'mushroom', images: ['./static/items/mushroom.png']},
-        {id: 'powder', title: 'powder', images: ['./static/items/powder.png']},
+        {id: 'mushroom', title: 'mushroom', images: ['./static/items/mushroom.png'], update: ItemUpdate.mushroom},
+        {id: 'powder', title: 'powder', images: ['./static/items/powder.png'], update: ItemUpdate.powder},
 
         {id: 'firerod', title: 'firerod', images: ['./static/items/firerod.png']},
         {id: 'icerod', title: 'icerod', images: ['./static/items/icerod.png']},

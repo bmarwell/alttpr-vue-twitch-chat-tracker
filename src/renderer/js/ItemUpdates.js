@@ -102,6 +102,47 @@ class ItemUpdates {
       return;
     }
   }
+
+  /**
+   * update mushroom.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static mushroom(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    // just 'mushroom…' or 'shroom'.
+    if (['shroom'].indexOf(firstParam) >= 0 || ['mushroom'].indexOf(firstParam) >= 0) {
+      trackerItem.nextState();
+      return;
+    }
+  }
+
+  /**
+   * update magic powder.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static powder(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    const secondParam = params[1];
+    // just 'mushroom…' or 'shroom'.
+    if (['powder'].indexOf(firstParam) >= 0
+    || (['mag'].indexOf(firstParam) >= 0 && ['pow'].indexOf(secondParam) >= 0)
+    || (['magicp'].indexOf(firstParam) >= 0)) {
+      trackerItem.nextState();
+      return;
+    }
+  }
 }
 
 export default ItemUpdates;
