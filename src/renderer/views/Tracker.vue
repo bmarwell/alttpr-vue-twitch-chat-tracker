@@ -77,8 +77,8 @@ export default {
         {id: 'mushroom', title: 'mushroom', images: ['./static/items/mushroom.png'], update: ItemUpdate.mushroom},
         {id: 'powder', title: 'powder', images: ['./static/items/powder.png'], update: ItemUpdate.powder},
 
-        {id: 'firerod', title: 'firerod', images: ['./static/items/firerod.png']},
-        {id: 'icerod', title: 'icerod', images: ['./static/items/icerod.png']},
+        {id: 'firerod', title: 'firerod', images: ['./static/items/firerod.png'], update: ItemUpdate.firerod},
+        {id: 'icerod', title: 'icerod', images: ['./static/items/icerod.png'], update: ItemUpdate.icerod},
 
         {id: 'bombos', title: 'bombos', images: ['./static/items/bombos.svg']},
         {id: 'ether', title: 'ether', images: ['./static/items/ether.svg']},

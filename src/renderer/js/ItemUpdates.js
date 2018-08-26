@@ -143,6 +143,48 @@ class ItemUpdates {
       return;
     }
   }
+
+  /**
+   * update firerod.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static firerod(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    const secondParam = params[1];
+    // just 'fire rod' or 'firerod'.
+    if (['firerod'].indexOf(firstParam) >= 0
+    || (['fire'].indexOf(firstParam) >= 0 && ['rod'].indexOf(secondParam) >= 0)) {
+      trackerItem.nextState();
+      return;
+    }
+  }
+
+  /**
+   * update icerod.
+   *
+   * @param {trackerItem} trackerItem trackeritem to update.
+   * @param {Array} params blah.
+   */
+  static firerod(trackerItem, params) {
+    if (params[0] === undefined) {
+      return;
+    }
+
+    const firstParam = params[0];
+    const secondParam = params[1];
+    // just 'fire rod' or 'firerod'.
+    if (['icerod'].indexOf(firstParam) >= 0
+    || (['ice'].indexOf(firstParam) >= 0 && ['rod'].indexOf(secondParam) >= 0)) {
+      trackerItem.nextState();
+      return;
+    }
+  }
 }
 
 export default ItemUpdates;
